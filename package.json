@@ -1,0 +1,24 @@
+{
+  "name": "js-coding-practice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^7.12.1",
+    "prettier": "^2.1.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simonchen92/js-coding-practice.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/simonchen92/js-coding-practice/issues"
+  },
+  "homepage": "https://github.com/simonchen92/js-coding-practice#readme"
+}
