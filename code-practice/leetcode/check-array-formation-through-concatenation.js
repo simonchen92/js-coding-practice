@@ -64,6 +64,6 @@ let canFormArray = function (arr, pieces) {
 
 console.log(canFormArray([85], [[85]])); // true
 console.log(canFormArray([15, 88], [[15, 88]])); // true
-console.log(canFormArray([49, 18, 16], [[16, 18, 49]])); // false piece[0] or 16 cannot be mutated
+console.log(canFormArray([49, 18, 16], [[16, 18, 49]])); // false piece[0] or 16 cannot be mutated since 1816 is not the same as 1618
 console.log(canFormArray([91, 4, 64, 78], [[78], [4, 64], [91]])); // true
 console.log(canFormArray([1, 3, 5, 7], [[2, 4, 6, 8]])); // false
