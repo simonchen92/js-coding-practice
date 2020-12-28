@@ -1,18 +1,21 @@
 // write a function that takes in an array of numbers
-// returns an array the numbers that appears more than once
+// returns an array of numbers that appears more than once
 
-const findDupes = num => {
+const findDupes = (num) => {
   // loop an array of numbers
-  // filter out numbers that does not occur more than once
+  // filter out numbers and send back numbers that occur more than once
   const filteredArr = num.filter((item, index) => {
-    return num.indexOf(item) !== index
-  })
-  // filter out numbers that appear more than once
-  return filteredArr.filter((item, index) => {
-    return filteredArr.indexOf(item) === index
-  })
-}
+    return num.indexOf(item) !== index;
+  });
 
-console.log(findDupes([1, 2, 2, 3, 3, 4, 5]))
-console.log(findDupes([5, 3, 2, 3, 6, 5, 8]))
-console.log(findDupes([5, 3, 2, 3, 6, 5, 8, 5, 5]))
+  console.log('filtered arr is ', filteredArr);
+  // since the returned value are all numbers that occur more than once
+  // return the numbers values that occured more than once, ONLY ONCE
+  return filteredArr.filter((item, index) => {
+    return filteredArr.indexOf(item) === index;
+  });
+};
+
+console.log(findDupes([1, 2, 2, 3, 3, 4, 5]));
+console.log(findDupes([5, 3, 2, 3, 6, 5, 8]));
+console.log(findDupes([5, 3, 2, 3, 6, 5, 8, 6, 5, 5]));
