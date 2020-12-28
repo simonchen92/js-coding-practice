@@ -8,7 +8,6 @@ const findDupes = (num) => {
     return num.indexOf(item) !== index;
   });
 
-  console.log('filtered arr is ', filteredArr);
   // since the returned value are all numbers that occur more than once
   // return the numbers values that occured more than once, ONLY ONCE
   return filteredArr.filter((item, index) => {
