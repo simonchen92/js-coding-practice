@@ -18,13 +18,18 @@ https://www.codewars.com/kata/54bf1c2cd5b56cc47f0007a1/javascript
 */
 
 // Solution 1
-// Using a for of and for in loop
-function duplicateCount(text) {
-  let count = 0;
-  let input = text.toLowerCase();
-  let obj = {};
 
+function duplicateCount(text) {
+  // create an obj to store counts of letters
+  let obj = {};
+  // create a counter to keep track of times each text occurs
+  let count = 0;
+  // de-structure text variable and also make it case-insensitive
+  let input = text.toLowerCase();
+
+  // create a for of loop to loop through each individual letter
   for (let i of input) {
+    // assign i to obj to keep track of count if it hasn't appeared yet
     if (!obj[i]) {
       obj[i] = 1;
     } else {
@@ -32,7 +37,9 @@ function duplicateCount(text) {
     }
   }
 
+  // create for in loop to loop through obj key value pairs
   for (let i in obj) {
+    // create conditional that if there is an obj count greater than 1 then add count by 1
     if (obj[i] > 1) {
       count++;
     }
