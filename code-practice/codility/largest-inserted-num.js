@@ -38,9 +38,6 @@ function solution(N) {
   }
 
   return numStr;
-
-  //   return +parseInt(String(N).replace(/^([5-9]*)(\d*)$/, '$15$2'));
-  // if num is less than 0 then adding a 5 in the beginning of the num would create the largest negative num
 }
 
 console.log(solution(268)); // 5268
