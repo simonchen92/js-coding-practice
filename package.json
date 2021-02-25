@@ -5,8 +5,8 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
-    "eslint": "^7.12.1",
-    "prettier": "^2.1.2"
+    "eslint": "^7.20.0",
+    "prettier": "^2.2.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
