@@ -24,32 +24,44 @@
 // Solution 1
 
 const rotate = function (nums, k) {
-  let x = 0
+  let x = 0;
   while (x < k) {
-    const c = nums.pop()
-    nums.unshift(c)
-    x++
+    // Pop removes last elements in arr
+    // We then take the remove elements and add it to the front of arr using unshift
+    const c = nums.pop();
+    nums.unshift(c);
+    x++;
   }
-}
+  return nums;
+};
 
-// Solution 2 using for loop; linter does not agree with the definition of i
-
-// const rotateOne = function (nums, k) {
-//   for (i = 0; i < k; i++) {
-//     const numMod = nums.pop()
-//     nums.unshift(numMod)
+// Alternate Solution
+// const rotate = function (nums, k) {
+//   let x = 0;
+//   while (x < k) {
+//     nums.unshift(nums.pop());
+//     x++;
 //   }
-// }
+//   return nums;
+// };
 
-// Solution 3 using splice and spread operator
+console.log(rotate([1, 2, 3, 4, 5, 6, 7], 3)); //[5,6,7,1,2,3,4]
+console.log(rotate([-1, -100, 3, 99], 2)); // [3, 99, -1, 100]
+
+// Solution 2 using splice and spread operator
 
 const rotateTwo = function (nums, k) {
-  const newArr = nums.splice(nums.length - k)
-  nums.unshift(...newArr)
-}
+  const newArr = nums.splice(nums.length - k);
+  nums.unshift(...newArr);
+  return [...nums];
+};
 
-module.exports = {
-  rotate,
-  // rotateOne,
-  rotateTwo
-}
+// Alternate Solution
+
+// const rotateTwo = (nums, k) => {
+//   nums.unshift(...nums.splice(nums.length - k));
+//   return nums;
+// };
+
+console.log(rotateTwo([1, 2, 3, 4, 5, 6, 7], 3)); //[5,6,7,1,2,3,4]
+console.log(rotateTwo([-1, -100, 3, 99], 2)); // [3, 99, -1, 100]
