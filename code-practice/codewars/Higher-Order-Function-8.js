@@ -30,25 +30,107 @@
 // Test Use
 
 const list1 = [
-  { firstName: 'Fatima', lastName: 'A.', country: 'Algeria', continent: 'Africa', age: 25, language: 'JavaScript' },
-  { firstName: 'Agustín', lastName: 'M.', country: 'Chile', continent: 'Americas', age: 37, language: 'C' },
-  { firstName: 'Jing', lastName: 'X.', country: 'China', continent: 'Asia', age: 39, language: 'Ruby' },
-  { firstName: 'Laia', lastName: 'P.', country: 'Andorra', continent: 'Europe', age: 55, language: 'Ruby' },
-  { firstName: 'Oliver', lastName: 'Q.', country: 'Australia', continent: 'Oceania', age: 65, language: 'PHP' }
-]
+  {
+    firstName: 'Fatima',
+    lastName: 'A.',
+    country: 'Algeria',
+    continent: 'Africa',
+    age: 25,
+    language: 'JavaScript',
+  },
+  {
+    firstName: 'Agustín',
+    lastName: 'M.',
+    country: 'Chile',
+    continent: 'Americas',
+    age: 37,
+    language: 'C',
+  },
+  {
+    firstName: 'Jing',
+    lastName: 'X.',
+    country: 'China',
+    continent: 'Asia',
+    age: 39,
+    language: 'Ruby',
+  },
+  {
+    firstName: 'Laia',
+    lastName: 'P.',
+    country: 'Andorra',
+    continent: 'Europe',
+    age: 55,
+    language: 'Ruby',
+  },
+  {
+    firstName: 'Oliver',
+    lastName: 'Q.',
+    country: 'Australia',
+    continent: 'Oceania',
+    age: 65,
+    language: 'PHP',
+  },
+];
 
 const list2 = [
-  { firstName: 'Fatima', lastName: 'A.', country: 'Algeria', continent: 'Africa', age: 25, language: 'JavaScript' }
-]
+  {
+    firstName: 'Fatima',
+    lastName: 'A.',
+    country: 'Algeria',
+    continent: 'Africa',
+    age: 25,
+    language: 'JavaScript',
+  },
+];
 
-// Solution
+// Solution 1
+// Using Reduce
 
-function allContinent (list) {
-  return Object.keys(list.reduce((acc, curr) => {
-    acc[curr.continent] = curr.continent
-    return acc
-  }, {})).length === 5
+function allContinent(list) {
+  return (
+    Object.keys(
+      list.reduce((acc, curr) => {
+        acc[curr.continent] = curr.continent;
+        return acc;
+      }, {}),
+    ).length === 5
+  );
 }
 
-console.log(allContinent(list1))
-console.log(allContinent(list2))
+// Solution 2
+// Using Set
+
+function allContinents(list) {
+  return new Set(list.map((dev) => dev.continent)).size === 5;
+}
+
+// Solution 3
+// Using includes
+
+function allContinents(list) {
+  const continents = list.map((dev) => dev.continent);
+  return continents.includes(
+    'Africa' && 'Americas' && 'Asia' && 'Europe' && 'Oceania',
+  );
+}
+
+// Solution 4
+// Using Traditional For Loop
+
+function allContinents(list) {
+  let continent = [];
+  for (let i = 0; i < list.length; i++) {
+    let devContinent = list[i].continent;
+    if (continent.indexOf(devContinent) === -1) {
+      continent.push(devContinent);
+    }
+  }
+  if (continent.length === 5) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+console.log(allContinent(list1)); // true
+console.log(allContinent(list2)); // false
