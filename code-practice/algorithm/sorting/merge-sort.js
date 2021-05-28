@@ -1,6 +1,8 @@
 /*
 Sort an array using the merge sort algorithm
 
+Merge sort is an efficient, general-purpose, comparison-based sorting algorithm.
+
 1. If length of array is less than 2, return the array
 2. Use Math.floor to calculate the middle point of the array
 3. Use slice method to slice the array into two and use recursion to create subarrays
