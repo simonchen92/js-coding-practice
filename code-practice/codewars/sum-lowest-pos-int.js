@@ -13,13 +13,28 @@ https://www.codewars.com/kata/558fc85d8fd1938afb000014/javascript
 
 // Solution
 // Sort the numbers from descending order from smallest num to largest and then add the first two indexes from the array
-function sumTwoSmallestNumbers (numbers) {
-  numbers.sort((a, b) => a - b)
-  return numbers[0] + numbers[1]
+function sumTwoSmallestNumbers(numbers) {
+  numbers.sort((a, b) => a - b);
+  return numbers[0] + numbers[1];
 }
 
-console.log(sumTwoSmallestNumbers([5, 8, 12, 19, 22])) // 13
-console.log(sumTwoSmallestNumbers([15, 28, 4, 2, 43])) // 6
-console.log(sumTwoSmallestNumbers([3, 87, 45, 12, 7])) // 10
-console.log(sumTwoSmallestNumbers([23, 71, 33, 82, 1])) // 24
-console.log(sumTwoSmallestNumbers([52, 76, 14, 12, 4])) // 16
+console.log(sumTwoSmallestNumbers([5, 8, 12, 19, 22])); // 13
+console.log(sumTwoSmallestNumbers([15, 28, 4, 2, 43])); // 6
+console.log(sumTwoSmallestNumbers([3, 87, 45, 12, 7])); // 10
+console.log(sumTwoSmallestNumbers([23, 71, 33, 82, 1])); // 24
+console.log(sumTwoSmallestNumbers([52, 76, 14, 12, 4])); // 16
+
+// Alternate solution
+
+function sumTwoSmallestNumbers2(numbers) {
+  return numbers
+    .sort((a, b) => a - b)
+    .slice(0, 2)
+    .reduce((prev, curr) => prev + curr, 0);
+}
+
+console.log(sumTwoSmallestNumbers2([5, 8, 12, 19, 22])); // 13
+console.log(sumTwoSmallestNumbers2([15, 28, 4, 2, 43])); // 6
+console.log(sumTwoSmallestNumbers2([3, 87, 45, 12, 7])); // 10
+console.log(sumTwoSmallestNumbers2([23, 71, 33, 82, 1])); // 24
+console.log(sumTwoSmallestNumbers2([52, 76, 14, 12, 4])); // 16
