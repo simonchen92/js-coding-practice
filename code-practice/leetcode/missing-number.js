@@ -12,14 +12,14 @@
 // Solution
 
 const missingNumber = function (nums) {
-  let num = 0
-  let expectedNum = nums.length
+  let num = 0;
+  let expectedNum = nums.length;
   for (let i = 0; i < nums.length; i++) {
-    num += nums[i]
-    expectedNum += i
+    num += nums[i];
+    expectedNum += i;
   }
-  return expectedNum - num
-}
+  return expectedNum - num;
+};
 
-console.log(missingNumber([9, 6, 4, 2, 3, 5, 7, 0, 1]))
-console.log(missingNumber([6, 4, 2, 3, 7, 0, 1]))
+console.log(missingNumber([9, 6, 4, 2, 3, 5, 7, 0, 1]));
+console.log(missingNumber([6, 4, 2, 3, 7, 0, 1]));
