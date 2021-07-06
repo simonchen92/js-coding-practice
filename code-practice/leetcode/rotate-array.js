@@ -21,6 +21,9 @@
 // Try to come up as many solutions as you can, there are at least 3 different ways to solve this problem.
 // Could you do it in-place with O(1) extra space?
 
+// Direct Link
+// https://leetcode.com/problems/rotate-array/
+
 // Solution 1
 
 const rotate = function (nums, k) {
@@ -35,33 +38,29 @@ const rotate = function (nums, k) {
   return nums;
 };
 
-// Alternate Solution
-// const rotate = function (nums, k) {
-//   let x = 0;
-//   while (x < k) {
-//     nums.unshift(nums.pop());
-//     x++;
-//   }
-//   return nums;
-// };
-
 console.log(rotate([1, 2, 3, 4, 5, 6, 7], 3)); //[5,6,7,1,2,3,4]
 console.log(rotate([-1, -100, 3, 99], 2)); // [3, 99, -1, 100]
 
-// Solution 2 using splice and spread operator
+// Solution 2
+// Using unshift and splice
+// Splice is weird with negative numbers
 
 const rotateTwo = function (nums, k) {
-  const newArr = nums.splice(nums.length - k);
-  nums.unshift(...newArr);
-  return [...nums];
+  return nums.unshift(...nums.splice(-(k % nums.length)));
 };
-
-// Alternate Solution
-
-// const rotateTwo = (nums, k) => {
-//   nums.unshift(...nums.splice(nums.length - k));
-//   return nums;
-// };
 
 console.log(rotateTwo([1, 2, 3, 4, 5, 6, 7], 3)); //[5,6,7,1,2,3,4]
 console.log(rotateTwo([-1, -100, 3, 99], 2)); // [3, 99, -1, 100]
+
+// Solution 3
+// Using Pop and Unshift
+
+let rotateThree = function (nums, k) {
+  while (k--) {
+    nums.unshift(nums.pop());
+  }
+  return [...nums];
+};
+
+console.log(rotateThree([1, 2, 3, 4, 5, 6, 7], 3)); //[5,6,7,1,2,3,4]
+console.log(rotateThree([-1, -100, 3, 99], 2)); // [3, 99, -1, 100]
