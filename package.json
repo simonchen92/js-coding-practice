@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "devDependencies": {
-    "eslint": "^7.20.0",
-    "prettier": "^2.2.1"
+    "eslint": "^7.31.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "prettier": "^2.3.2"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
