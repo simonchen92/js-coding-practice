@@ -55,12 +55,15 @@ console.log(rotateTwo([-1, -100, 3, 99], 2)); // [3, 99, -1, 100]
 // Solution 3
 // Using Pop and Unshift
 
-let rotateThree = function (nums, k) {
+var rotateThree = function (nums, k) {
+  let arr = [];
+  // Modulo operator is used here in case K is larger than nums.length
+  // We will take the remainder and rotate that many spaces
+  k %= nums.length;
   while (k--) {
-    nums.unshift(nums.pop());
+    arr.push(nums.pop());
   }
-  return [...nums];
+  nums.unshift(...arr.reverse());
 };
-
 console.log(rotateThree([1, 2, 3, 4, 5, 6, 7], 3)); //[5,6,7,1,2,3,4]
 console.log(rotateThree([-1, -100, 3, 99], 2)); // [3, 99, -1, 100]
