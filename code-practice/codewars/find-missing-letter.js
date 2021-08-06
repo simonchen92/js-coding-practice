@@ -19,38 +19,38 @@ https://www.codewars.com/kata/5839edaa6754d6fec10000a2/train/javascript
 function findMissingLetter(array) {
   // manually added alphabets
   let alphabet = [
-    'a',
-    'b',
-    'c',
-    'd',
-    'e',
-    'f',
-    'g',
-    'h',
-    'i',
-    'j',
-    'k',
-    'l',
-    'm',
-    'n',
-    'o',
-    'p',
-    'q',
-    'r',
-    's',
-    't',
-    'u',
-    'v',
-    'w',
-    'x',
-    'y',
-    'z',
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "g",
+    "h",
+    "i",
+    "j",
+    "k",
+    "l",
+    "m",
+    "n",
+    "o",
+    "p",
+    "q",
+    "r",
+    "s",
+    "t",
+    "u",
+    "v",
+    "w",
+    "x",
+    "y",
+    "z",
   ];
 
   let firstLetter = array[0];
 
   if (firstLetter === firstLetter.toUpperCase()) {
-    alphabet = alphabet.join('').toUpperCase().split('');
+    alphabet = alphabet.join("").toUpperCase().split("");
   }
 
   // get first array element
@@ -67,5 +67,33 @@ function findMissingLetter(array) {
   }
 }
 
-console.log(findMissingLetter(['a', 'b', 'c', 'd', 'f'])); // 'e'
-console.log(findMissingLetter(['O', 'Q', 'R', 'S'])); // 'P'
+console.log(findMissingLetter(["a", "b", "c", "d", "f"])); // 'e'
+console.log(findMissingLetter(["O", "Q", "R", "S"])); // 'P'
+
+// Solution 2
+
+function findMissingLetter1(array) {
+  let alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  let letter = alphabet.split("");
+  let start = letter.indexOf(array[0]);
+  return letter
+    .slice(start, start + array.length)
+    .find((char) => !array.includes(char));
+}
+
+console.log(findMissingLetter1(["a", "b", "c", "d", "f"])); // 'e'
+console.log(findMissingLetter1(["O", "Q", "R", "S"])); // 'P'
+
+// Clever Solution
+
+function findMissingLetter2(array) {
+  let first = array[0].charCodeAt(0);
+  for (let i = 1; i < array.length; i++) {
+    if (first + i !== array[i].charCodeAt(0)) {
+      return String.fromCharCode(first + i);
+    }
+  }
+}
+
+console.log(findMissingLetter2(["a", "b", "c", "d", "f"])); // 'e'
+console.log(findMissingLetter2(["O", "Q", "R", "S"])); // 'P'
