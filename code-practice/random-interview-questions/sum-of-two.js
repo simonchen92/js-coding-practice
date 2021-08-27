@@ -25,7 +25,7 @@ const sumOfTwo = (a, b, v) => {
     // Create new hash / obj to store difference in values
     let obj = new Set();
     for (let i = 0; i < a.length; i++) {
-        // Calculate the values we need from the second array be getting the difference of value and array a  
+        // Calculate the values we need from the second array by getting the difference of value and array a  
         let differences = v - a[i];
         // Store that value into the hash / obj
         obj.add(differences);
