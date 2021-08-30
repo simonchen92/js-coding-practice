@@ -26,7 +26,7 @@
 
 // Solution 1
 
-const rotate = function (nums, k) {
+const rotate = function(nums, k) {
   let x = 0;
   while (x < k) {
     // Pop removes last elements in arr
@@ -45,7 +45,7 @@ console.log(rotate([-1, -100, 3, 99], 2)); // [3, 99, -1, 100]
 // Using unshift and splice
 // Splice is weird with negative numbers
 
-const rotateTwo = function (nums, k) {
+const rotateTwo = function(nums, k) {
   return nums.unshift(...nums.splice(-(k % nums.length)));
 };
 
@@ -55,7 +55,7 @@ console.log(rotateTwo([-1, -100, 3, 99], 2)); // [3, 99, -1, 100]
 // Solution 3
 // Using Pop and Unshift
 
-var rotateThree = function (nums, k) {
+var rotateThree = function(nums, k) {
   let arr = [];
   // Modulo operator is used here in case K is larger than nums.length
   // We will take the remainder and rotate that many spaces
