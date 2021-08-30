@@ -37,7 +37,7 @@ https://leetcode.com/problems/queries-on-a-permutation-with-key/
 // Solution 1
 // Using Splice and Unshift
 
-let processQueries = function (queries, m) {
+let processQueries = function(queries, m) {
   // Create a 'p' num array [1,2,3,...,m]
   let p = [];
   for (let i = 1; i <= m; i++) {
@@ -62,14 +62,14 @@ let processQueries = function (queries, m) {
   return result;
 };
 
-// console.log(processQueries([3, 1, 2, 1], 5)); // [2,1,2,1]
-// console.log(processQueries([4, 1, 2, 2], 4)); // [3,1,2,0]
-// console.log(processQueries([7, 5, 5, 8, 3], 8)); // [6,5,0,7,5]
+console.log(processQueries([3, 1, 2, 1], 5)); // [2,1,2,1]
+console.log(processQueries([4, 1, 2, 2], 4)); // [3,1,2,0]
+console.log(processQueries([7, 5, 5, 8, 3], 8)); // [6,5,0,7,5]
 
 // Solution 2
 // Not using splice and unshift => create better time and space complexity
 
-let processQueries1 = function (queries, m) {
+let processQueries1 = function(queries, m) {
   // Create a 'p' num array [1,2,3,...,m]
   let p = [];
   for (let i = 1; i <= m; i++) {
