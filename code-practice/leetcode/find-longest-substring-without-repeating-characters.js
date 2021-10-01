@@ -76,7 +76,6 @@ function lengthOfLongestSubstring1(s) {
     }
     // if not seen, add the value to the hash
     seen.add(s[i]);
-    console.log('set is:', seen);
     longest = Math.max(longest, i - start + 1);
   }
   return longest;
